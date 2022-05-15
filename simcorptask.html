@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <h1>
+        <title>SIMCORPTASK</title>
+    </h1>
+    <style>
+        td select,
+        td input {
+            width: 150px;
+        }
+
+        #diagram td {
+            vertical-align: bottom;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #diagram div {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+<form name="calculator">
+    <table>
+        <tr>
+            <td>Total investment</td>
+            <td>
+                <input name="money" type="number" value="10000" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td>
+                <select name="months">
+                    <option value="3">3 months 3.5%</option>
+                    <option value="6">6 months 4%</option>
+                    <option value="12" selected>12 months 5%</option>
+                    <option value="18">18 months 6%</option>
+                    <option value="24">24 months 7%</option>
+                    <option value="48">48 months 16%</option>
+                </select>
+                <input type="date" id="nowdate" name="nowdate" readonly>
+                <input type="date" id="enddate" name="enddate" readonly>
+            </td>
+        </tr>
+    </table>
+
+
+</form>
+
+
+<table id="diagram">
+    <tr>
+        <th>Was:</th>
+        <th>Will be:</th>
+        <th>Fixed<br>monthly<br>income:</th>
+    </tr>
+    <tr>
+        <th id="money-before"></th>
+        <th id="money-after"></th>
+        <th id="money-month"></th>
+    </tr>
+    <td>
+        <div style="background: red;width:40px;height:100px"></div>
+    </td>
+    <td>
+        <div style="background: green;width:40px;height:100px" id="height-after"></div>
+    </td>
+    <td>
+        <div style="background: blue;width:40px;height:100px" id="height-month"></div>
+    </td>
+</table>
+<script src="simcorptask.js"></script>
+</body>
+</html>
